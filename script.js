@@ -23,7 +23,7 @@ function createGrid(size) {
         square.style.width = `512/${size}`;
         container.appendChild(square);
         const paintSquare = document.getElementsByClassName("square");
-        paintSquare[i].addEventListener('mouseenter', function () {paintSquare[i].style.backgroundColor = 'black'});
+        paintSquare[i].addEventListener('mouseenter', function () {paintSquare[i].style.backgroundColor = colour});
     }
 }
 
@@ -39,9 +39,22 @@ function clearGrid() {
 document.getElementById('btn').addEventListener('click', () => {
     clearGrid();
     let size = prompt('New grid size?');
+    while (size > 100) {
+        alert('No bigger than 100 please.');
+        size = prompt('New grid size?');
+    }
     createGrid(size);
 });
 
+// Toggle colour
+let colour = 'black';
+document.getElementById('blackBtn').addEventListener('click', () => {
+    colour = 'black';
+})
+document.getElementById('randomBtn').addEventListener('click', () => {
+    let randomColour = Math.floor(Math.random()*16777215).toString(16);
+    colour = '#' + randomColour;
+})
 
 createCanvas();
 createGrid(16);
