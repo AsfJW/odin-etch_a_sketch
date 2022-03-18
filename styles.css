@@ -2,6 +2,23 @@ h1 {
     text-align: center;
 }
 
+h3 {
+    text-align: center;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
 .container {
     display: grid;
     border: 1px black solid; 
@@ -9,4 +26,7 @@ h1 {
     background-color: bisque;
 }
 
+/* .square {
+    background-color: bisque;
+} */
 
